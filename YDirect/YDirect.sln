@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YDirect", "YDirect\YDirect.csproj", "{1EBB106C-859C-4B10-A18F-D71BAD8D894A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YDirect.View", "YDirect.View\YDirect.View.csproj", "{B7DA174A-E7FE-4EFC-8DC9-B8B4391CF47E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YDirect.ViewModel", "YDirect.ViewModel\YDirect.ViewModel.csproj", "{629F250C-56F2-430C-AF7E-A99EA659DDDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yandex.Direct", "Yandex.Direct\Yandex.Direct.csproj", "{13822D53-7377-42D0-BC23-E7102146BB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YDirect.Model", "YDirect.Model\YDirect.Model.csproj", "{38A66C72-FA4E-44E1-9278-D5BEB6AFF3E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{E3E1B272-FEF2-4FC2-B226-395F2BBC9BAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yandex.Direct.Stubs", "Yandex.Direct.Stubs\Yandex.Direct.Stubs.csproj", "{6A8DFFF3-B80A-4781-86A0-D172870E3F8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EBB106C-859C-4B10-A18F-D71BAD8D894A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EBB106C-859C-4B10-A18F-D71BAD8D894A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EBB106C-859C-4B10-A18F-D71BAD8D894A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EBB106C-859C-4B10-A18F-D71BAD8D894A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7DA174A-E7FE-4EFC-8DC9-B8B4391CF47E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7DA174A-E7FE-4EFC-8DC9-B8B4391CF47E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7DA174A-E7FE-4EFC-8DC9-B8B4391CF47E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7DA174A-E7FE-4EFC-8DC9-B8B4391CF47E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{629F250C-56F2-430C-AF7E-A99EA659DDDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{629F250C-56F2-430C-AF7E-A99EA659DDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{629F250C-56F2-430C-AF7E-A99EA659DDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{629F250C-56F2-430C-AF7E-A99EA659DDDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13822D53-7377-42D0-BC23-E7102146BB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13822D53-7377-42D0-BC23-E7102146BB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13822D53-7377-42D0-BC23-E7102146BB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13822D53-7377-42D0-BC23-E7102146BB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A66C72-FA4E-44E1-9278-D5BEB6AFF3E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A66C72-FA4E-44E1-9278-D5BEB6AFF3E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A66C72-FA4E-44E1-9278-D5BEB6AFF3E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A66C72-FA4E-44E1-9278-D5BEB6AFF3E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A8DFFF3-B80A-4781-86A0-D172870E3F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A8DFFF3-B80A-4781-86A0-D172870E3F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A8DFFF3-B80A-4781-86A0-D172870E3F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A8DFFF3-B80A-4781-86A0-D172870E3F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{13822D53-7377-42D0-BC23-E7102146BB9A} = {E3E1B272-FEF2-4FC2-B226-395F2BBC9BAC}
+		{6A8DFFF3-B80A-4781-86A0-D172870E3F8C} = {E3E1B272-FEF2-4FC2-B226-395F2BBC9BAC}
+	EndGlobalSection
+EndGlobal

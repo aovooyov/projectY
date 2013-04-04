@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="YDirect.View.CampaignTabView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             Style="{StaticResource VisibilityStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock Margin="10, 0" Text="{Binding Campaign.Name, StringFormat=Компания: {0}}" />
+            <TextBlock Margin="10, 0" Text="{Binding Campaign.Status, StringFormat=Статус: {0}}" />
+        </StackPanel>
+        <WrapPanel Grid.Row="1">
+            <GroupBox Header="Общие параметры на кампанию" Padding="10" Margin="10">
+                <StackPanel>
+                    <CheckBox Content="Автоматически выбирать места для получения максимальной выгоды" IsChecked="{Binding AutoChecked}" />
+                    <CheckBox Content="Выставлять ставку всегда не ниже минимальной для показа на поиске" />
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Content="Все фразы кампании должны показываться не " />
+                        <ComboBox Width="40" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="В динамике процент показов не ниже, чем " />
+                        <TextBox Width="20" />
+                        <TextBlock Text=" %" />
+                    </StackPanel>
+                    <CheckBox Content="При управлении ставками применять стратегию" />
+                    <Button Margin="10" Content="Пересчитать решения на странице" Width="200" />
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Смена опций на все фразы в кампании" Padding="10" Margin="10">
+                <StackPanel>
+                    <CheckBox Content="Включить все фразы на управление" />
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <Label Content="Тактика" />
+                            <ComboBox Width="50" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Позиция" />
+                            <ComboBox Width="50" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="R-Max" />
+                            <TextBox Width="50" />
+                        </StackPanel>
+                    </StackPanel>
+                    <Button Margin="10" Content="Установить значения" Width="70" />
+                </StackPanel>
+            </GroupBox>
+        </WrapPanel>
+        <!--<Button Grid.Row="2" Content="Banners tab" Command="{Binding BannersListCommand}" Width="100" Height="50"/>-->
+        <DataGrid Grid.Row="2"  ItemsSource="{Binding Banners}"
+              SelectionMode="Single"
+              AutoGenerateColumns="True"
+              IsReadOnly="True"
+              CanUserAddRows="False"
+              CanUserDeleteRows="False"   
+              IsSynchronizedWithCurrentItem="True"
+              VirtualizingStackPanel.VirtualizationMode="Recycling"
+              VirtualizingStackPanel.IsVirtualizing="True"
+              HeadersVisibility="Column" 
+              CanUserResizeColumns="True"
+              CanUserSortColumns="True">
+            <!--<DataGrid.GroupStyle>
+            <GroupStyle ContainerStyle="{StaticResource GroupHeaderStyle}">
+                <GroupStyle.Panel>
+                    <ItemsPanelTemplate>
+                        <DataGridRowsPresenter />
+                    </ItemsPanelTemplate>
+                </GroupStyle.Panel>
+            </GroupStyle>
+        </DataGrid.GroupStyle>-->
+            <!--<DataGrid.ItemContainerStyle>
+            <Style TargetType="DataGridRow">
+                <EventSetter Event="MouseDoubleClick" Handler="HandleMouseDoubleClickRow" />
+            </Style>
+        </DataGrid.ItemContainerStyle>-->
+            <!--<DataGrid.Columns>
+            <DataGridTextColumn Binding="{Binding Login}" Header="Клиент" />
+            <DataGridTextColumn Binding="{Binding Id}" Header="Я-ID" />
+            <DataGridTextColumn Binding="{Binding Name}" Header="Рекламная компания" />
+            <DataGridTextColumn Binding="{Binding Status}" Header="Статус" />
+            <DataGridTextColumn Binding="{Binding Rest}" Header="Остаток" />
+        </DataGrid.Columns>-->
+        </DataGrid>
+
+    </Grid>
+</UserControl>  

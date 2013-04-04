@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="YDirect.View.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:YDirect.ViewModel;assembly=YDirect.ViewModel"
+             xmlns:v="clr-namespace:YDirect.View"
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="500">
+    <UserControl.DataContext>
+        <vm:MainViewModel />
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type vm:InfoTabViewModel}">
+            <v:InfoTabView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CampaignsListTabViewModel}">
+            <v:CampaignsListTabView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ClientsListTabViewModel}">
+            <v:ClientsListTabView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:BannersListTabViewModel}">
+            <v:BannersListTabView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CampaignTabViewModel}">
+            <v:CampaignTabView />
+        </DataTemplate>
+    </UserControl.Resources>
+    <DockPanel LastChildFill="True">
+        <Ribbon DockPanel.Dock="Top">
+            <RibbonTab Header="Главная">
+                <RibbonGroup Header="Информация">
+                    <!--<RibbonToggleButton Label="Мои данные" Command="{Binding ToggleInfoTabCommand}" IsChecked="{Binding IsOpenInfoTab, Mode=OneWay}" />-->
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Объявления и фразы">
+                <RibbonGroup Header="Списки и фильтры">
+                    <RibbonToggleButton Label="Список баннеров" Command="{Binding ToggleBannersCommand}"  IsChecked="{Binding IsOpenBannersTab, Mode=OneWay}" />
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Финансы">
+
+            </RibbonTab>
+            <RibbonTab Header="Компании">
+                <RibbonGroup Header="Списки и фильтры">
+                    <RibbonToggleButton Label="Список компаний" Command="{Binding ToggleCampaignsCommand}"  IsChecked="{Binding IsOpenCampaignsTab, Mode=OneWay}" />
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Метки">
+            </RibbonTab>
+            <RibbonTab Header="Клиенты">
+                <RibbonGroup Header="Списки и фильтры">
+                    <RibbonToggleButton Label="Список клиентов" Command="{Binding ToggleClientsCommand}" IsChecked="{Binding IsOpenClientsTab, Mode=OneWay}" />
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <TabControl ItemsSource="{Binding Tabs}" 
+                    ItemTemplate="{StaticResource ClosableTabItemTemplate}" />
+
+    </DockPanel>
+</UserControl>

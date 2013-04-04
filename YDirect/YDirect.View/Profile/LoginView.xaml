@@ -1,0 +1,18 @@
+﻿<TabItem x:Class="YDirect.View.Profile.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:vm="clr-namespace:YDirect.ViewModel;assembly=YDirect.ViewModel"
+         Header="Логин">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <ListBox ItemsSource="{Binding Profiles}" SelectedItem="{Binding Profile}" Height="65" Width="200" Margin="10, 0" IsEnabled="{Binding IsEnabled}" />
+        <PasswordBox vm:BoundPasswordBox.BoundPassword="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Margin="10,5,10,0" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                     IsEnabled="{Binding IsEnabled}"/>
+        <CheckBox HorizontalAlignment="Center" Content="Песочница" IsChecked="{Binding Sandbox}" />
+        <StackPanel Margin="0,5,0,0" Orientation="Horizontal" Height="20" HorizontalAlignment="Center">
+            <Button Width="60" Margin="5, 0" Content="Войти" Command="{Binding LoginCommand}"/>
+            <Button Width="60" Margin="5, 0" Content="Удалить" Command="{Binding RemoveCommand}"/>
+            <Button Width="60" Margin="5, 0" Content="Выйти" Command="{Binding CloseCommand}"/>
+        </StackPanel>
+    </StackPanel>
+</TabItem>

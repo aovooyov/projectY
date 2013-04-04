@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="YDirect.View.CampaignsListTabView"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+         mc:Ignorable="d" 
+         d:DesignHeight="300" d:DesignWidth="300"
+         Style="{StaticResource VisibilityStyle}">
+    <UserControl.Resources>
+        <CollectionViewSource Source="{Binding Campaigns}" x:Key="LoginGroupedView">
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription PropertyName="Login" />
+            </CollectionViewSource.GroupDescriptions>
+        </CollectionViewSource>
+    </UserControl.Resources>
+    <!--ItemsSource="{Binding Source={StaticResource LoginGroupedView}}"-->
+    <!--SelectedItem="{Binding SelectedCampaign, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"-->
+    <DataGrid DataContext="{StaticResource LoginGroupedView}"
+              ItemsSource="{Binding IsAsync=True}"
+              SelectionMode="Single"
+              AutoGenerateColumns="False"
+              IsReadOnly="True"
+              CanUserAddRows="False"
+              CanUserDeleteRows="False"   
+              IsSynchronizedWithCurrentItem="True"
+              VirtualizingStackPanel.VirtualizationMode="Recycling"
+              VirtualizingStackPanel.IsVirtualizing="True"
+              HeadersVisibility="Column" 
+              CanUserResizeColumns="True"
+              CanUserSortColumns="True">
+        <DataGrid.GroupStyle>
+            <GroupStyle ContainerStyle="{StaticResource GroupHeaderStyle}">
+                <GroupStyle.Panel>
+                    <ItemsPanelTemplate>
+                        <DataGridRowsPresenter />
+                    </ItemsPanelTemplate>
+                </GroupStyle.Panel>
+            </GroupStyle>
+        </DataGrid.GroupStyle>
+        <DataGrid.ItemContainerStyle>
+            <Style TargetType="DataGridRow">
+                <EventSetter Event="MouseDoubleClick" Handler="HandleMouseDoubleClickRow" />
+            </Style>
+        </DataGrid.ItemContainerStyle>
+        <DataGrid.Columns>
+            <DataGridTextColumn Binding="{Binding Login}" Header="Клиент" />
+            <DataGridTextColumn Binding="{Binding Id}" Header="Я-ID" />
+            <DataGridTextColumn Binding="{Binding Name}" Header="Рекламная компания" />
+            <DataGridTextColumn Binding="{Binding Status}" Header="Статус" />
+            <DataGridTextColumn Binding="{Binding Rest}" Header="Остаток" />
+        </DataGrid.Columns>
+    </DataGrid>
+</UserControl>

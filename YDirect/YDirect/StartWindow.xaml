@@ -1,0 +1,16 @@
+﻿<Window x:Class="YDirect.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:view="clr-namespace:YDirect.View;assembly=YDirect.View"
+        Title="Яндекс.Директ"
+        Height="400" Width="300"
+        AllowsTransparency="True" 
+        Background="Transparent"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        TextOptions.TextRenderingMode="Auto"
+        TextOptions.TextFormattingMode="Ideal"
+        MouseLeftButtonDown="HandleMouseLeftButtonDown" Icon="icon.png">
+    <view:StartView />
+</Window>
